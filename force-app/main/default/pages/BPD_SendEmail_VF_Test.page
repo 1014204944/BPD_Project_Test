@@ -1,0 +1,6 @@
+<!-- Test Boton VF 16042023-->
+<apex:page controller="BPD_SendEmail_Test" >
+  <apex:form >
+    <apex:commandButton value="SendEmail" action="{!sendingEmail}"/>
+  </apex:form>
+</apex:page>

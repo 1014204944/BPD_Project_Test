@@ -1,0 +1,47 @@
+<!--Crear PDF en botón de Cuentas APP ventas 28/04/2023-->
+
+<apex:page standardController="Account" renderAs="pdf">
+ 
+    <!--<apex:image id="TOK_Logo" value="https://moque-dev-ed.develop.my.salesforce.com/sfc/p/3x000002180L/a/3x000000Fx9O/h9CBAXBUAlgWMj3YX.ANgUWIHp8PoOx0TW4X3Xh7PBM" width="100" height="50%" alt="Active IT" />-->
+ 
+<div style="font-family:sans-serif;"> 
+    <h1>Bienvenido a Active IT!</h1>
+</div>
+ 
+<div style="font-family:sans-serif;text-align:left;font-size:12pt;">
+<p>Gracias, <b><apex:outputText value=" {!Account.Name}"/></b> por 
+   ser parte de nuestra familia.</p>
+ 
+<p>Los detalles de la cuenta son:</p>
+ 
+<table>
+<tr><th>Nombre de la cuenta</th>
+    <td><apex:outputText value="{!Account.Name}"/></td>
+    </tr>
+<tr><th>Representante o acudiente</th>
+    <td><apex:outputText value="{!Account.Owner.Name}"/></td>
+    </tr>
+   <tr><th>Número DUNS</th>
+    <td><apex:outputText value="{!Account.DunsNumber}"/></td>
+    </tr>
+<tr><th>Fecha de apertura</th>
+    <td><apex:outputText value="{0,date,long}">
+        <apex:param value="{!Account.CreatedDate}"/>
+        </apex:outputText></td>
+    </tr>
+</table>
+    
+<p>Es para nosotros un placer servirle y no dude en contactarnos para cualquier duda o inquietud.</p>
+    
+<p>Cordial Saludo,</p>
+    
+<p><apex:outputText value="{!Account.Owner.Name}"/></p>
+</div>
+
+<div style="font-family:sans-serif;text-align:left;color:#2f5a61;font-size:10pt;"><!--<br/> 504 Henry Street<br/>-->
+    Email: contacto@activeit.com.co<br/>
+    Teléfono: +56 2 29584450<br/>
+    https://www.activeit.cl/<br/> 
+</div>
+    
+</apex:page>
